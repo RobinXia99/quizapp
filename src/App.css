@@ -1,38 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  } 
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToLeft {
+  0% {
+    transform: translateX(0);
+  } 100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  } 
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  } 
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.rightToLeft {
+  animation: slideInFromRight 1s, fadeIn 1s;
+}
+
+.leftToRight {
+  animation: slideOutToLeft 1s, fadeOut 1s;
+}
+
 .App {
   text-align: center;
+  background-color: #0F1217;
+  height: 100vh;
+  width: 100%;
+  color: white;
+  position: fixed;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  font-family: 'Phosphate';
+  font-size: 4rem;
+  text-shadow: 0 0 5px #00FF27;
+  margin-top: 4rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.instruction-text {
+  font-family: 'Futura';
+  font-size: 1.8rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#name-input {
+  width: 280px;
+  height: 2.6rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 2px solid #28A33B;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.5rem;
+  font-family: 'Futura';
+  padding: 0 5px;
+  margin-top: 1.5rem;
+}
+
+input:focus {
+  outline: none !important;
+  box-shadow: 0 0 10px rgb(23, 202, 77);
+}
+
+#start-button {
+  font-family: 'Futura';
+  font-weight: lighter;
+  width: 280px;
+  height: 2.6rem;
+  padding: 0 5px;
+  background-color: #28A33B;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+#start-button:hover {
+  transform: scale(1.05);
+}
+
+#start-button:active {
+  transform: translate3d(3px, 3px, 0px);
+}
+
+.input-container {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 100px auto;
+}
+
+.large-text {
+  font-family: 'Futura';
+  font-size: 2.5rem;
   color: white;
+  margin-top: 180px;
 }
 
-.App-link {
-  color: #61dafb;
+.large-text2 {
+  font-family: 'Futura';
+  font-size: 2rem;
+  color: white;
+  margin-top: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.option-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  color: white;
+  font-family: 'Futura';
+  font-size: 2.2rem;
+  margin: 50px auto;
+  width: 1200px
 }
+
+.option {
+  line-height: 100px;
+  margin: 0 50px;
+  margin-bottom: 50px;
+  width: 500px;
+  height: 100px;
+  background-color: #28A33B;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.option:hover,.restart:hover {
+  transform: scale(1.05);
+}
+
+.option:active,.restart:active {
+  transform: translate3d(3px, 3px, 0px);
+  background-color: rgb(0, 153, 255);
+}
+
+.restart {
+  margin: 50px auto;
+  width: 450px;
+  height: 50px;
+  background-color: #28A33B;
+  font-family: 'Futura';
+  font-size: 1.5rem;
+  line-height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+
+
